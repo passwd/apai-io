@@ -60,6 +60,25 @@ class Search extends AbstractOperation
     }
 
     /**
+     * Sets the amazon minimum discount percentage (5 for 5%)
+     *
+     * @param int $percentageOff
+     *
+     * @return \ApaiIO\Operations\Search
+     */
+    public function setMinPercentageOff($percentageOff)
+    {
+        $this->parameters['MinPercentageOff'] = $percentageOff;
+
+        return $this;
+    }
+
+    public function getMinPercentageOff()
+    {
+        return $this->getSingleOperationParameter('MinPercentageOff');
+    }
+
+    /**
      * Returns the keywords
      *
      * @return string
